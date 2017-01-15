@@ -13,20 +13,23 @@ public class Main {
 		int opt=1;
 		Scanner scn = new Scanner(System.in);
 			
-				System.out.println("Enter Option");
+				
+				
+		{	
+				System.out.println("Enter Option 0 to exit ");
 				System.out.println("1: Generate Permutations");
 				System.out.println("2: Check Palindrome");
 				System.out.println("3: Remove Char from String");
 				System.out.println("4: Find Missing element in Array");
 				System.out.println("5: Daigonal Diff of Given Array");
 				System.out.println("6: Reversed SUM of two Reversed integers");
-				
+				System.out.println("7: Most Frequent CHar: ");
 				opt=scn.nextInt();
 				
 				switch (opt) {
 				case 1:												//1:Palindrome
 					
-					System.out.println("Enter String");
+					System.out.println("Enter String \n");
 					scn = new Scanner(System.in);
 					String s1=scn.next();
 					Set<String> set1 = sp.generatePerm(s1);
@@ -63,12 +66,16 @@ public class Main {
 				case 6:
 					hc.reverseSumIntegers();
 					break;
+				case 7:
+					sp.findMostFrequentChar();
+					break;	
 				default:
+					System.out.println("Enter Options.");
 					break;
 				}
 				
 				
-					
+			}	
 		
 			
 		

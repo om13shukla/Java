@@ -2,10 +2,10 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class AllStringProg {
+public class AllStringProg { 
 
 	String s1,s2,temp;
-	int i=0,j=0,k=0,l;
+	int i=0,j=0,k=0,l=0;
 	char c1,c2;
 	char[] ch1;
 	private Scanner scn;
@@ -19,7 +19,7 @@ public class AllStringProg {
 		ch1=s1.toCharArray();
 		j=ch1.length-1;
 		temp= new StringBuffer(s1).reverse().toString();
-		
+		System.out.println(temp);
 		while(i<ch1.length-1){
 			c1=ch1[i];
 			ch1[i]=ch1[j];
@@ -28,12 +28,12 @@ public class AllStringProg {
 			i++;
 		}
 		
-		for(i=0;i<ch1.length-1;i++){System.out.println(ch1[i]+"");}
+		for(i=0;i<ch1.length;i++){System.out.println(ch1[i]+"");}
 		
 		if(s1.equals(temp))
 		System.out.println("Yes it is a palindrome : "+ s1 +" -->"+ temp);
 		else
-		System.out.println("NOt a palindrome"+ s1 +" -->"+ temp);
+		System.out.println("NOt a palindrome : "+ s1 +" --> "+ temp);
 		scn.close();
 		
 		
@@ -85,9 +85,13 @@ public class AllStringProg {
 		    return set;
 		}
 		
-		static String findMostFrequentChar(String inputString) {
-	        String smax="";
-	       Character s1;
+		static String findMostFrequentChar() {
+			String inputString;
+			System.out.println("Enter String");
+			Scanner scn = new Scanner(System.in);
+			inputString=scn.next();
+			String smax="";
+	       Character s1='a';
 	        
 	        int c=0,max=0;
 	        for(int i=0;i<inputString.length();i++){
@@ -100,16 +104,22 @@ public class AllStringProg {
 	                if(s1==inputString.charAt(k)){
 	                    c++;
 	                 }
-	                if(c > max){smax=""; smax=new StringBuilder().append(s1).toString();System.out.println(s1); max=c;}
-	            }                        
-	            System.out.print(s1);
-	            System.out.print(c);
+	                if(c > max){smax=""; 
+	                			smax=new StringBuilder().append(s1).toString();
+	                			//System.out.println(s1);
+	                			max=c;
+	                			//System.out.println(i + k +"  \n");
+	                			}
+	            			}                        
+	            
 	            
 	            
 	           
 	            c=0;
 	            //{smax="as ";}
 	        }
+	        System.out.print("Winner is '" + s1+ "' with " +max+ " repititions ");
+	      
 	    return smax;
 	    }
 		
